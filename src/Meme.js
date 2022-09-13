@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 
-export const Meme = () => {
+export const Meme = ({handleMemeCount}) => {
   const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
@@ -22,6 +22,7 @@ export const Meme = () => {
           ...prevMeme,
           randomImage: url
       }))
+      handleMemeCount()
     }
 
     const handleChange = ({target}) => {
